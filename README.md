@@ -66,3 +66,17 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Wordpress API configuration
+
+Plugins necessários:
+
+1. Custom Posts Types UI
+2. Custom Posts Types
+3. ACF to REST
+
+# Step-by-step
+
+1. Configurar diferentes tipos de posts por (1);
+2. Configurar campos relativos à cada tipo de post em (2);
+3. Acessar objetos customizados pela URL fornecida por (3): `http://localhost:8000/wp-json/acf/v3/{post_type_name}`
