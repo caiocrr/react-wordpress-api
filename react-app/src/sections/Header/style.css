@@ -1,0 +1,11 @@
+.dan-header {
+  color: #383838;
+  font-family: "Titillium Web", sans-serif;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.dan-active-menu {
+  color: #383838 !important;
+  font-weight: bold;
+}
