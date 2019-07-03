@@ -1,6 +1,6 @@
 FROM node:alpine
-RUN mkdir -p /app
-COPY ./package.json /app/package.json
 WORKDIR /app
+COPY package.json package.json
 RUN yarn install
+RUN yarn global add react-scripts
 ENTRYPOINT [ "yarn", "start" ]
