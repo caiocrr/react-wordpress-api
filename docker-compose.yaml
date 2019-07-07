@@ -29,8 +29,8 @@ services:
     image: wordpress:latest
     volumes:
       - ./wordpress:/var/www/html
-    ports:
-      - "8000:80"
+    expose:
+      - "80"
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
@@ -38,11 +38,15 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
   app:
-    user: root
+    restart: always
     depends_on:
       - wordpress
     build: ./react-app
+  nginx:
+    restart: always
     ports:
-      - "3000:3000"
-    volumes:
-      - "./react-app:/app"
+      - "80:8080"
+    depends_on:
+      - app
+      - wordpress
+    build: ./nginx

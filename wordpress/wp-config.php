@@ -18,6 +18,14 @@
  * @package WordPress
  */
 
+if (isset($_SERVER['HTTP_X_FORWARDED_HOST'])) {
+	$_SERVER['HTTP_HOST'] = $_SERVER['HTTP_X_FORWARDED_HOST']."/api";
+}
+define('WP_HOME', 'http://localhost/api/'); 
+define('WP_SITEURL', 'http://localhost/api/');
+
+
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', 'wordpress');
@@ -94,3 +102,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once( ABSPATH . 'wp-settings.php' );
+
+

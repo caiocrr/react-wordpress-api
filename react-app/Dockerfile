@@ -1,7 +1,13 @@
-FROM node:alpine
+FROM node:alpine as build-stage
 WORKDIR /app
-RUN chmod 777 /
-COPY package.json package.json
-RUN yarn install
+COPY . .
 RUN yarn global add react-scripts
-ENTRYPOINT [ "yarn", "start" ]
+RUN yarn install
+RUN yarn build
+
+EXPOSE 80
+
+
+FROM nginx
+COPY --from=build-stage /app/build /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]

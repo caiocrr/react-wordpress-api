@@ -7,6 +7,7 @@
 
 require( ABSPATH . WPINC . '/option.php' );
 
+
 /**
  * Convert given date string into a different format.
  *
@@ -7165,3 +7166,6 @@ function is_wp_version_compatible( $required ) {
 function is_php_version_compatible( $required ) {
 	return empty( $required ) || version_compare( phpversion(), $required, '>=' );
 }
+
+
+remove_filter('template_redirect','redirect_canonical');
