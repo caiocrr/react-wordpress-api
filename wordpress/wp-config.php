@@ -23,6 +23,7 @@ if (isset($_SERVER['HTTP_X_FORWARDED_HOST'])) {
 	define('WP_HOME', 'https://'.$_SERVER['HTTP_X_FORWARDED_HOST'].'/api/'); 
 	define('WP_SITEURL', 'https://'.$_SERVER['HTTP_X_FORWARDED_HOST'].'/api/');
 }
+$_SERVER['HTTPS'] = 'on';
 
 
 
@@ -103,5 +104,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once( ABSPATH . 'wp-settings.php' );
-
 

@@ -90,3 +90,8 @@ Plugins necessários:
 1. `API_URL` em `http.js`
 2. `WP_HOME` e `WP_SITEURL` em `wp-config.js`
 3. Possível alteração de porta no header `X-Forwarded-Host` definido em `nginx.conf`
+
+# Processo de criação
+
+1. Fork do repositório
+2. Todas as alterações em dev e em prod (configuração de dados) serão versionadas
