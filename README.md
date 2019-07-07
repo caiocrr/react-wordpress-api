@@ -80,3 +80,13 @@ Plugins necessários:
 1. Configurar diferentes tipos de posts por (1);
 2. Configurar campos relativos à cada tipo de post em (2);
 3. Acessar objetos customizados pela URL fornecida por (3): `http://localhost:8000/wp-json/acf/v3/{post_type_name}`
+
+# GCP
+
+1. Container-Optimized OS, 75-12105.88.0 stable
+
+# URL's configuration
+
+1. `API_URL` em `http.js`
+2. `WP_HOME` e `WP_SITEURL` em `wp-config.js`
+3. Possível alteração de porta no header `X-Forwarded-Host` definido em `nginx.conf`

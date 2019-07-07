@@ -20,9 +20,10 @@
 
 if (isset($_SERVER['HTTP_X_FORWARDED_HOST'])) {
 	$_SERVER['HTTP_HOST'] = $_SERVER['HTTP_X_FORWARDED_HOST']."/api";
+	define('WP_HOME', 'https://'.$_SERVER['HTTP_X_FORWARDED_HOST'].'/api/'); 
+	define('WP_SITEURL', 'https://'.$_SERVER['HTTP_X_FORWARDED_HOST'].'/api/');
 }
-define('WP_HOME', 'http://localhost/api/'); 
-define('WP_SITEURL', 'http://localhost/api/');
+
 
 
 
